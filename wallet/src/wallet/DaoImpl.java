@@ -116,9 +116,9 @@ public  class DaoImpl implements UserDao{
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		finally {
-			sc.close();
-		}
+// 		finally {
+// 			sc.close();
+// 		}
 
 	    
 	}
@@ -207,9 +207,9 @@ public  class DaoImpl implements UserDao{
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		finally {
-			sc.close();
-		}
+// 		finally {
+// 			sc.close();
+// 		}
 	}
 
 	
