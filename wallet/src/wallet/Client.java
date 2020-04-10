@@ -37,6 +37,9 @@ public class Client {
 		}
 		
 		while(true) {
+			@SuppressWarnings("resource")
+			Scanner s = new Scanner(System.in);
+			int choice = 0;
 			
 			System.out.println("1. Check Balance");
 			System.out.println("2. Add Money to Wallet");
@@ -45,27 +48,32 @@ public class Client {
 			System.out.println("5. Show Transactions");
 			System.out.println("6. Exit");
 			
-			int choice = sc.nextInt();
+			 choice = s.nextInt();
+			
 			switch(choice) {
 			
 			case 1:
 				System.out.print("Balance: ");
 				System.out.println(d.checkBalance());
+				
 				break;
 			case 2:
+				int amt = 0;
 				System.out.println("Enter amount");
-				int amt = sc.nextInt();
+				amt = s.nextInt();
 				d.addMoney(amt);
+				
 				break;
 			case 3:
 				System.out.println("Enter recepient mobile number");
-				String mob = sc.next();
+				String mob = s.next();
 				System.out.println("Enter amount");
-				amt = sc.nextInt();
+				amt = s.nextInt();
 				d.sendMoney(mob, amt);
 				break;
 			case 4:
 				d.addAcc();
+				
 				break;
 			case 5:
 				ArrayList<Transactions> trans = new ArrayList<Transactions>();
@@ -79,6 +87,7 @@ public class Client {
 			case 6: System.exit(0);
 			default: System.out.println("Invalid Entry");
 			}
+//			s.close();
 			
 		}
 		
